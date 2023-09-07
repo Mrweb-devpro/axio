@@ -9,6 +9,7 @@ main {
   height: 100%;
   display: flex;
 }
+
 section.section-loading {
   width: 100vw;
   height: 100vh;
@@ -48,4 +49,7 @@ section.section-loading {
     font-weight: weight(bolder);
     font-size: font-size(regular);
   }
+}
+button:hover {
+  cursor: pointer;
 }

@@ -72,10 +72,12 @@
     height: calc(100% - 11rem);
     overflow-x: hidden;
     overflow-y: scroll;
+    scrollbar-gutter: stable;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    gap: 0.5rem;
+    gap: 1rem;
+
     .chat {
       height: 5.8rem;
       //   background-color: blue;
@@ -127,15 +129,16 @@
         gap: 0.3rem;
         font-size: font-size(atom);
         & .none {
-          & b {
+          & button {
             display: none;
           }
           & .check-icon {
             display: block;
           }
         }
-        & b {
-          display: block;
+        & button {
+          font-size: inherit;
+          border: none;
           background-color: $primary-color;
           width: 1.6rem;
           height: 1.6rem;
@@ -162,21 +165,23 @@
     left: 50%;
     background-color: $primary-color;
     // height: 10rem;
-    width: calc(100%);
+    width: 100%;
     height: 48px;
     transform: translateX(-50%);
-    padding: 1rem;
+    padding: 1rem 2rem;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    & span .icon {
+    & button .icon {
       width: 2.5rem;
     }
-    & span {
+    & button {
+      border: none;
+      background-color: transparent;
       position: relative;
     }
-    & span.active-nav {
+    & button.active-nav {
       &::after {
         content: "";
         position: absolute;
