@@ -1,0 +1,51 @@
+@import "./general";
+@import "./login";
+@import "./signup";
+@import "./dashboard";
+@import "./query";
+
+main {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+section.section-loading {
+  width: 100vw;
+  height: 100vh;
+  background-color: #00202b;
+  @include flex-cols-center;
+  gap: 3rem;
+  color: $secondary-color;
+
+  & .logo-cont {
+    background-color: #29434c;
+    border-radius: 50%;
+    width: 24rem;
+    height: 24rem;
+    @include flex-cols-center;
+
+    & .logo {
+      width: 70%;
+      height: 70%;
+    }
+  }
+
+  & .loading-bar-cont {
+    width: 50rem;
+    height: 0.7rem;
+    border-radius: 1rem;
+    background-color: $grey-color;
+    overflow: hidden;
+    & .loading-bar {
+      display: block;
+      width: 67%;
+      height: 100%;
+      background-color: $primary-color;
+    }
+  }
+  .secondary-header {
+    text-transform: capitalize;
+    font-weight: weight(bolder);
+    font-size: font-size(regular);
+  }
+}

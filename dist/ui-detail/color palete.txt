@@ -1,0 +1,7 @@
+-------AXIO
+Let's build axio here is all the colors you might need
+
+#309bbd for the all light blue color
+#d8d8d8 for grey chat background
+#888888 for placeholders
+#00202b for loading background color

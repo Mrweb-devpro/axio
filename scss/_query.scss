@@ -1,0 +1,76 @@
+/**************************/
+/* BELOW 1344px (Smaller desktops) */
+/**************************/
+
+@media (max-width: 84em) {
+}
+
+/**************************/
+/* BELOW 1200px (Landscape Tablets) */
+/**************************/
+
+@media (max-width: 75em) {
+  html {
+    font-size: 56.25%;
+  }
+}
+
+/**************************/
+/* BELOW 944px (Tablets) */
+/**************************/
+
+@media (max-width: 59em) {
+  html {
+    font-size: 50%;
+  }
+  section.section-loading {
+    width: 100vw;
+    height: 100vh;
+    & .loading-bar-cont {
+      width: 70%;
+      height: 0.4rem;
+    }
+    aside.aside-chat {
+      width: 100vw;
+      height: 100vh;
+      background-color: red;
+    }
+  }
+  section.section-dashboard-chat {
+    display: none;
+  }
+}
+
+/**************************/
+/* BELOW 704px (Smaller tablets) */
+/**************************/
+
+@media (max-width: 44em) {
+}
+
+/**************************/
+/* BELOW 544px (Phones) */
+/**************************/
+
+@media (max-width: 34em) {
+  section.section-signup {
+    & form.signup-inp-cont {
+      width: calc(100% - 2rem);
+      height: 20rem;
+      overflow: hidden;
+    }
+    & .passowrd-checker-cont {
+      width: calc(100% - 2rem);
+    }
+  }
+  section.section-login {
+    & form.login-inp-cont {
+      gap: 1rem;
+      width: calc(100% - 3rem);
+      & > div .inp {
+        height: 2rem;
+      }
+      // overflow: hidden;
+    }
+  }
+}
