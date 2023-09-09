@@ -1,16 +1,74 @@
 .section-signup {
+  position: relative;
   width: 100vw;
   height: 100vh;
   background: url("/dist/assets/log-bg.png") top center;
   background-size: cover;
   @include flex-cols-center;
-  gap: 3rem;
+  gap: 2rem;
   padding: 1rem;
+
+  & article.loading-overlay {
+    position: relative;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #0000009d;
+    color: $secondary-color;
+    @include flex-cols-center;
+
+    & button.cancel-loading-overlay {
+      position: absolute;
+      top: 2rem;
+      right: 2rem;
+      width: 4rem;
+      height: 4rem;
+      font-size: font-size(larger);
+      color: $secondary-color;
+      font-weight: weight(medium);
+      background-color: transparent;
+      border: none;
+      @include flex-cols-center;
+      @include smoot-trans;
+      &:hover {
+        color: $primary-color;
+        border: 2px solid $primary-color;
+        border-radius: 0.5rem;
+      }
+    }
+    & div {
+      @mixin animationCode {
+        border-radius: 1rem;
+        font-size: font-size(medium);
+        width: fit-content;
+      }
+      $borderRadius: 1rem;
+      @include animationCode;
+      text-transform: capitalize;
+      border: 2px solid $secondary-color;
+      padding: 2rem;
+      @include flex-cols-center;
+
+      animation: loadingCont infinite linear 3s;
+      &:before {
+        content: "authenticating";
+        width: 100%;
+        height: 100%;
+        letter-spacing: 4px;
+        animation: change-spacing infinite linear 3s;
+      }
+    }
+    &.none {
+      display: none;
+    }
+  }
   & .logo-cont {
-    background-color: #29434c80;
+    background-color: $logo-bg;
     border-radius: 50%;
-    width: 22rem;
-    height: 22rem;
+    width: 20rem;
+    height: 20rem;
     @include flex-cols-center;
 
     & .logo {
@@ -76,7 +134,13 @@
       width: 67%;
       height: 100%;
       background-color: $primary-color;
+      @include smoot-trans;
     }
+  }
+  & .error {
+    color: $errorColor;
+    text-transform: capitalize;
+    font-size: font-size(tiny);
   }
   .btn {
     background-color: $primary-color;

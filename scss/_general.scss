@@ -24,6 +24,8 @@ $grey-color: #c1c1c1;
 $grey-color3: #d3d3d3;
 $dark-grey-color: #d8d8d8;
 $dark-color: #222;
+$errorColor: red;
+$logo-bg: #29434c80;
 
 // ***********************************************
 $font-weight: (
@@ -42,6 +44,7 @@ $font-size: (
   "regular": 1.8rem,
   "medium": 2rem,
   "large": 3rem,
+  "larger": 4rem,
 );
 @function weights($weight) {
   @return map-get($font-weight, $weight);

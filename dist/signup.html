@@ -9,6 +9,10 @@
   <body>
     <main>
       <section class="section-signup">
+        <article class="loading-overlay none">
+          <button class="cancel-loading-overlay">&times;</button>
+          <div class=""></div>
+        </article>
         <div class="logo-cont">
           <img
             src="./assets/axio_--_logo-removebg-preview 7.svg"
@@ -17,7 +21,7 @@
           />
         </div>
 
-        <form class="signup-inp-cont">
+        <form class="signup-inp-cont signup-form">
           <div class="username">
             <label class="icon" for="username">
               <svg
@@ -52,8 +56,9 @@
             </label>
 
             <input
-              type=""
-              name=""
+              required
+              type="text"
+              name="username"
               id="username"
               class="inp"
               placeholder="username"
@@ -65,8 +70,9 @@
             </label>
 
             <input
-              type=""
-              name=""
+              required
+              type="email"
+              name="email"
               id="email"
               class="inp"
               placeholder="email or phonenumber"
@@ -77,8 +83,9 @@
               <img src="./assets/Password.svg" alt="password" />
             </label>
             <input
-              type="text"
-              name=""
+              required
+              type="password"
+              name="password"
               id="password"
               class="inp"
               placeholder="password"
@@ -89,8 +96,9 @@
               <img src="./assets/Password.svg" alt="confirm password" />
             </label>
             <input
-              type="text"
-              name=""
+              required
+              type="password"
+              name="confirmPassword"
               id="confirm-password"
               class="inp"
               placeholder="confirm password"
@@ -100,6 +108,7 @@
         <div class="passowrd-checker-cont">
           <span class="passowrd-checker"></span>
         </div>
+        <p class="error">no internet connection</p>
         <button class="signup-btn btn">signup</button>
         <p class="register">
           Already have an account? <a href="./login.html">Login</a>
@@ -107,5 +116,6 @@
       </section>
     </main>
     <script defer src="./js/signup.js"></script>
+    <script defer src="./bundle.js"></script>
   </body>
 </html>

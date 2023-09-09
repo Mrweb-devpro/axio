@@ -196,6 +196,7 @@ body {
 }
 
 .section-signup {
+  position: relative;
   width: 100vw;
   height: 100vh;
   background: url("/dist/assets/log-bg.png") top center;
@@ -213,15 +214,112 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  gap: 3rem;
+  gap: 2rem;
   padding: 1rem;
+}
+
+.section-signup article.loading-overlay {
+  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #0000009d;
+  color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.section-signup article.loading-overlay button.cancel-loading-overlay {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  width: 4rem;
+  height: 4rem;
+  font-size: 4rem;
+  color: #fff;
+  font-weight: weight(medium);
+  background-color: transparent;
+  border: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+
+.section-signup article.loading-overlay button.cancel-loading-overlay:hover {
+  color: #309bbd;
+  border: 2px solid #309bbd;
+  border-radius: 0.5rem;
+}
+
+.section-signup article.loading-overlay div {
+  border-radius: 1rem;
+  font-size: 2rem;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  text-transform: capitalize;
+  border: 2px solid #fff;
+  padding: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-animation: loadingCont infinite linear 3s;
+          animation: loadingCont infinite linear 3s;
+}
+
+.section-signup article.loading-overlay div:before {
+  content: "authenticating";
+  width: 100%;
+  height: 100%;
+  letter-spacing: 4px;
+  -webkit-animation: change-spacing infinite linear 3s;
+          animation: change-spacing infinite linear 3s;
+}
+
+.section-signup article.loading-overlay.none {
+  display: none;
 }
 
 .section-signup .logo-cont {
   background-color: #29434c80;
   border-radius: 50%;
-  width: 22rem;
-  height: 22rem;
+  width: 20rem;
+  height: 20rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -341,6 +439,14 @@ body {
   width: 67%;
   height: 100%;
   background-color: #309bbd;
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+
+.section-signup .error {
+  color: red;
+  text-transform: capitalize;
+  font-size: 1.2rem;
 }
 
 .section-signup .btn {
@@ -954,6 +1060,79 @@ body {
   }
 }
 
+@-webkit-keyframes loadingCont {
+  0% {
+    border-radius: 1rem;
+    font-size: 2rem;
+    width: -webkit-fit-content;
+    width: fit-content;
+  }
+  50% {
+    width: -webkit-fit-content;
+    width: fit-content;
+    border-radius: 1.6rem;
+    font-size: 1.2rem;
+    border-color: #309bbd;
+    color: #309bbd;
+  }
+  100% {
+    border-radius: 1rem;
+    font-size: 2rem;
+    width: -webkit-fit-content;
+    width: fit-content;
+  }
+}
+
+@keyframes loadingCont {
+  0% {
+    border-radius: 1rem;
+    font-size: 2rem;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+  50% {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    border-radius: 1.6rem;
+    font-size: 1.2rem;
+    border-color: #309bbd;
+    color: #309bbd;
+  }
+  100% {
+    border-radius: 1rem;
+    font-size: 2rem;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+}
+
+@-webkit-keyframes change-spacing {
+  0% {
+    letter-spacing: 4px;
+  }
+  50% {
+    letter-spacing: 1px;
+  }
+  100% {
+    letter-spacing: 4px;
+  }
+}
+
+@keyframes change-spacing {
+  0% {
+    letter-spacing: 4px;
+  }
+  50% {
+    letter-spacing: 1px;
+  }
+  100% {
+    letter-spacing: 4px;
+  }
+}
+
 main {
   width: 100%;
   height: 100%;
@@ -984,7 +1163,7 @@ section.section-loading {
 }
 
 section.section-loading .logo-cont {
-  background-color: #29434c;
+  background-color: #29434c80;
   border-radius: 50%;
   width: 24rem;
   height: 24rem;
