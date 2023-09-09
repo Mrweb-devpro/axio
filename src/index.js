@@ -168,8 +168,10 @@ signupBtn.addEventListener("click", (e) => {
         signupForm.reset();
         console.log(cred.user);
         loadingOverlay.classList.add("none");
+        location.replace("./dist/login.html");
       })
       .catch((err) => {
+        loadingOverlay.classList.add("none");
         console.log(err.message);
       });
   } else if (!usernameInp.value) {
